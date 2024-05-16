@@ -15,7 +15,7 @@ import subprocess
 import platform
 import re
 
-# Configuração do caminho do executável do Tesseract OCR
+# Configuração do caminho do executável do Tesseract OCR.
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 # Definição das coordenadas e dimensões para a captura de tela dos erros e do nome do arquivo
