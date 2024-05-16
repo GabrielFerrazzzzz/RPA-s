@@ -3,6 +3,8 @@ import pyautogui
 import threading
 import os
 
+
+# classe com interface
 class MousePositionWidget(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -38,6 +40,8 @@ class MousePositionWidget(tk.Tk):
         self.log_index = 1  # Inicializa o índice do log
         self.first_enter_pressed = True  # Indica se o primeiro Enter foi pressionado
 
+
+    # dar update da posição do mouse
     def update_mouse_position(self):
         while True:
             x, y = pyautogui.position()
@@ -50,6 +54,7 @@ class MousePositionWidget(tk.Tk):
         self.update_thread = threading.Thread(target=self.update_mouse_position)
         self.update_thread.start()
 
+    # Apertando o enter ele grava a posição
     def enter_pressed(self, event):
         if self.first_enter_pressed:
             self.first_enter_pressed = False
@@ -71,7 +76,7 @@ class MousePositionWidget(tk.Tk):
         # Incrementa o índice do log
         self.log_index += 1
 
-
+    # Após você fechar o programa ele gerá o log com as posições obtidas
     def generate_log(self, x, y):
         log_message = f"{self.log_index}ª Posicao travada em: X={x}, Y={y}\n"
         with open("MousePosition.txt", "a") as log_file:
