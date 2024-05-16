@@ -3,7 +3,7 @@ from tkinter import filedialog
 import pandas as pd
 import os
 
-# CARREGUE O CSV AQUI OU O XLSX.
+# CARREGUE O CSV AQUI OU O XLSX
 
 def load_original_csv():
     # Agora permite selecionar ambos, arquivos CSV e Excel
