@@ -4,7 +4,7 @@ import threading
 import os
 
 
-# classe com interface
+# classe com interface.
 class MousePositionWidget(tk.Tk):
     def __init__(self):
         super().__init__()
